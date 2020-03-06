@@ -1,14 +1,14 @@
 package app;
 
 import java.util.Collections;
-import java.util.LinkedHashMap;
+import java.util.TreeMap;
 import java.util.Map;
 
 public class StockList {
    private final Map<String, StockItem> list;
 
    public StockList() {
-       this.list = new LinkedHashMap<>();
+       this.list = new TreeMap<>();
    }
     
    public int addStock(StockItem item) {
