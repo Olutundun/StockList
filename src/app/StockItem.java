@@ -33,7 +33,7 @@ public class StockItem implements Comparable<StockItem> {
         }
     }
 
-    public int getQuantityStock() {
+    public int quantityInStock() {
         return this.quantityStock;
     }
 
