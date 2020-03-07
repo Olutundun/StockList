@@ -23,6 +23,28 @@ public class Basket {
         return 0;
     }
 
+    public int removeFromBasket(StockItem item, int quantity) {
+        // check if item is valid
+        if ((item != null) && (quantity > 0)) {
+            // check if we already have the item in the basket
+            int inBasket = list.getOrDefault(item, 0); //return current quantity otherwise return 0
+            int newQuantity = inBasket - quantity;
+
+            if (newQuantity > 0) {
+                list.put(item, newQuantity);
+                return quantity;
+            } else if (newQuantity == 0) {
+                list.remove(item); //quantity is less than 0, remove from basket
+                return quantity;
+            }
+
+        }
+        return 0;
+    }
+    public void clearBasket() {
+        this.list.clear();
+    }
+
     public Map<StockItem, Integer> Items() {
         return Collections.unmodifiableMap(list);
     }
